@@ -1,0 +1,15 @@
+extends layout
+
+block header
+  h1= title
+  p Welcome to #{title}
+
+body 
+  div Post 
+    ul 
+      each item in messages  
+        li=messages.user
+        li=messages.text 
+        li=messages.added 
+  
+
