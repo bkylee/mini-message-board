@@ -1,15 +1,12 @@
 extends layout
 
-block header
-  h1= title
-  p Welcome to #{title}
-
-body 
-  div Post 
+block content 
+  h1 #{title}
+  div Post
     ul 
-      each item in messages  
-        li=messages.user
-        li=messages.text 
-        li=messages.added 
+      each item in messages
+        h2 #{item.user}
+        p #{item.text} 
+        p #{item.added} 
   
 

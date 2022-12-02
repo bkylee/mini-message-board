@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+const app = express();
 
 const messages = [
   {
@@ -20,13 +21,12 @@ router.get("/", function (req, res, next) {
 });
 
 router.get('/new', function(req, res, next){
-  res.render('form');
+  res.render('form', {title: "Create Post"});
 })
 
 router.post('/new', function(res,req,next){
-  messages.push({text: req.body.messages, user: req.body.name, added: new Date()});
+  messages.push({text: req.body.message, user: req.body.messageUser, added: new Date()});
   res.redirect('/');
 });
-
 
 module.exports = router;
