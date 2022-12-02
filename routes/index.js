@@ -24,8 +24,13 @@ router.get("/new", function(req, res, next){
 });
 
 router.post("/new", function(req,res,next){
+  if(req.body.message && req.body.messageUser){
   messages.push({text: req.body.message, user: req.body.messageUser, added: new Date()});
   res.redirect('/');
+  }
+  else{
+  res.redirect('/');
+  }
 });
 
 module.exports = router;
