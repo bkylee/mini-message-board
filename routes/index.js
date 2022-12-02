@@ -25,7 +25,7 @@ router.get("/new", function(req, res, next){
 
 router.post("/new", function(req,res,next){
   messages.push({text: req.body.message, user: req.body.messageUser, added: new Date()});
-  res.render("index", { title: "Tweeter", messages: messages });
+  res.redirect('/');
 });
 
 module.exports = router;
