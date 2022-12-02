@@ -1,0 +1,11 @@
+extends layout
+
+block content 
+  h1=title
+  h2 Posts
+  a(href='/new') Create
+  ul 
+    each item in messages
+      h2 #{item.user}
+      p #{item.text} 
+        p #{item.added} 

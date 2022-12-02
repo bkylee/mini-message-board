@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-const app = express();
 
 const messages = [
   {
@@ -20,13 +19,13 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Tweeter", messages: messages });
 });
 
-router.get('/new', function(req, res, next){
-  res.render('form', {title: "Create Post"});
-})
+router.get("/new", function(req, res, next){
+  res.render("form", { title: "Create a post" });
+});
 
-router.post('/new', function(res,req,next){
+router.post("/new", function(req,res,next){
   messages.push({text: req.body.message, user: req.body.messageUser, added: new Date()});
-  res.redirect('/');
+  res.render("index", { title: "Tweeter", messages: messages });
 });
 
 module.exports = router;

@@ -1,9 +1,0 @@
-extends layout 
-
-block content
-    h1 #{title}
-    form(method='POST', action='/new')
-        label(for='messageUser') Name
-        input(type="text" name='messageUser')
-        label(for='message') Message
-        input(type='text' name='message')
